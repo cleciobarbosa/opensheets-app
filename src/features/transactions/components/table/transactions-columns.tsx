@@ -348,10 +348,12 @@ function buildColumns({
 			cell: ({ row }) => {
 				const isReceita = row.original.transactionType === "Receita";
 				const isTransfer = row.original.transactionType === "Transferência";
+				const isIncomingTransfer =
+					isTransfer && Number(row.original.amount) > 0;
 				return (
 					<MoneyValues
 						amount={row.original.amount}
-						showPositiveSign={isReceita}
+						showPositiveSign={isReceita || isIncomingTransfer}
 						className={cn(
 							"whitespace-nowrap",
 							isReceita ? "text-success" : "text-foreground",

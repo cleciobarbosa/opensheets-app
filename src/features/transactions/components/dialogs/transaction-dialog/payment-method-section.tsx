@@ -93,7 +93,9 @@ export function PaymentMethodSection({
 			? accountOptions.filter(
 					(option) => option.accountType === "Pré-Pago | VR/VA",
 				)
-			: accountOptions;
+			: formState.paymentMethod === "Dinheiro"
+				? accountOptions.filter((option) => option.accountType === "Dinheiro")
+				: accountOptions;
 
 	const hasSecondaryColumn = isCartaoSelected || showContaSelect;
 
