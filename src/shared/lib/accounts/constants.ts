@@ -31,3 +31,6 @@ export const buildRefundNote = (originalTransactionId: string) =>
 
 export const isRefundNote = (note: string | null | undefined) =>
 	note?.startsWith(REFUND_NOTE_PREFIX) ?? false;
+
+export const isAccountInactive = (status: string | null | undefined) =>
+	status?.toLowerCase() === "inativa";
