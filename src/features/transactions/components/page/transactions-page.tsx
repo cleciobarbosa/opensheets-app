@@ -851,16 +851,6 @@ export function TransactionsPage({
 					onOpenChange={setAnticipationHistoryOpen}
 					seriesId={selectedForAnticipation.seriesId as string}
 					lancamentoName={selectedForAnticipation.name}
-					onViewLancamento={(transactionId) => {
-						const transaction = transactionList.find(
-							(l) => l.id === transactionId,
-						);
-						if (transaction) {
-							setSelectedTransaction(transaction);
-							setDetailsOpen(true);
-							setAnticipationHistoryOpen(false);
-						}
-					}}
 				/>
 			)}
 		</>
