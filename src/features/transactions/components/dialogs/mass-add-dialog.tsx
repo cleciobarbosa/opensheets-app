@@ -123,10 +123,11 @@ interface TransactionRow {
 
 function createEmptyTransactionRow(
 	defaultPayerId?: string | null,
+	lastPurchaseDate?: string,
 ): TransactionRow {
 	return {
 		id: createClientSafeId(),
-		purchaseDate: getTodayDateString(),
+		purchaseDate: lastPurchaseDate ?? getTodayDateString(),
 		name: "",
 		amount: "",
 		categoryId: undefined,
@@ -180,9 +181,10 @@ export function MassAddDialog({
 	}, [categoryOptions, transactionType]);
 
 	const addTransaction = () => {
+		const lastTransaction = transactions[transactions.length - 1];
 		setTransactions([
 			...transactions,
-			createEmptyTransactionRow(defaultPayerId),
+			createEmptyTransactionRow(defaultPayerId, lastTransaction?.purchaseDate),
 		]);
 	};
 
