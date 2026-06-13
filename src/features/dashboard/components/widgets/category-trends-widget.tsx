@@ -81,17 +81,20 @@ export function CategoryTrendsWidget({
 									</span>
 								</p>
 							</div>
-							<PercentageChangeIndicator
-								value={change}
-								label={formatPercentage(change, {
-									absolute: true,
-									minimumFractionDigits: 0,
-									maximumFractionDigits: 0,
-								})}
-								positiveTrend="down"
-								className="shrink-0 text-sm font-semibold"
-								iconClassName="size-3.5"
-							/>
+							<span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
+								<PercentageChangeIndicator
+									value={change}
+									label={formatPercentage(change, {
+										absolute: true,
+										minimumFractionDigits: 0,
+										maximumFractionDigits: 0,
+									})}
+									positiveTrend="down"
+									className="text-sm font-semibold"
+									iconClassName="size-3.5"
+								/>
+								<span>vs. mês ant.</span>
+							</span>
 						</div>
 					</li>
 				);

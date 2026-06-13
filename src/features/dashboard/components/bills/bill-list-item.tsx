@@ -65,7 +65,7 @@ export function BillListItem({ bill, period, onPay }: BillListItemProps) {
 									<TooltipTrigger asChild>
 										<span
 											className={cn(
-												"cursor-help rounded-full py-0.5",
+												"cursor-help",
 												bill.isSettled && "text-success font-semibold",
 												overdue && "text-destructive font-semibold",
 											)}
@@ -80,7 +80,6 @@ export function BillListItem({ bill, period, onPay }: BillListItemProps) {
 							) : (
 								<span
 									className={cn(
-										"rounded-full py-0.5",
 										bill.isSettled && "text-success font-semibold",
 										overdue && "text-destructive font-semibold",
 									)}

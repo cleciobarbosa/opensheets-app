@@ -123,9 +123,14 @@ export function InvoiceListItem({ invoice, onPay }: InvoiceListItemProps) {
 														className="font-medium"
 														amount={share.amount}
 													/>
-													<PercentageChangeIndicator
-														value={share.percentageChange}
-													/>
+													{share.percentageChange !== null ? (
+														<span className="flex items-center gap-1 text-xs text-muted-foreground">
+															<PercentageChangeIndicator
+																value={share.percentageChange}
+															/>
+															<span>vs. mês ant.</span>
+														</span>
+													) : null}
 												</div>
 											</li>
 										))}

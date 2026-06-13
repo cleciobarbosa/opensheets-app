@@ -144,7 +144,7 @@ export function MyAccountsWidget({
 									className="flex items-center justify-between py-1.5 transition-all duration-300"
 								>
 									<div className="flex min-w-0 flex-1 items-center gap-2 py-1">
-										<div className="relative flex size-9.5 shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary/10">
+										<div className="relative flex size-9.5 shrink-0 items-center justify-center overflow-hidden rounded-full">
 											{logoSrc ? (
 												<Image
 													src={logoSrc}

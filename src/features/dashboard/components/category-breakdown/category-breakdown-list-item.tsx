@@ -102,18 +102,19 @@ export function CategoryBreakdownListItem({
 						className="text-foreground font-medium"
 						amount={category.currentAmount}
 					/>
-					<PercentageChangeIndicator
-						value={category.percentageChange}
-						label={
-							category.percentageChange !== null
-								? formatPercentage(
-										category.percentageChange,
-										config.percentageDigits,
-									)
-								: undefined
-						}
-						positiveTrend={config.positiveTrend}
-					/>
+					{category.percentageChange !== null ? (
+						<span className="flex items-center gap-1 text-xs text-muted-foreground">
+							<PercentageChangeIndicator
+								value={category.percentageChange}
+								label={formatPercentage(
+									category.percentageChange,
+									config.percentageDigits,
+								)}
+								positiveTrend={config.positiveTrend}
+							/>
+							<span>vs. mês ant.</span>
+						</span>
+					) : null}
 				</div>
 			</div>
 		</div>
